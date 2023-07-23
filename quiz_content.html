@@ -6,35 +6,38 @@
     <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<div id="quiz" class="screen text-center bg-red-50 h-screen" style="">
+<body class="bg-gradient-to-r from-rose-100 to-teal-100">
+<!--<div id="quiz" class="screen text-center bg-gradient-to-bl from-indigo-900 via-indigo-400 to-indigo-900 h-screen" style="">-->
+<div id="quiz" class="screen text-center  h-screen container mx-auto" style="">
     <div id="quiz_top_div" class="">
         <!--            Top menu h=5-->
-        <div id="top_menu" class="grid grid-cols-3 gap-4 h-[5vh]">
-            <div id="progress_div" class="flex items-center justify-center align-center">
-                <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+        <div id="top_menu" class="grid h-[5vh] m-3">
+            <div id="progress_div" class="flex w-full items-center justify-center align-center">
+                <div class="w-full bg-gray-200 rounded-full dark:bg-gray-70">
                     <div id="quiz_progress_bar"
-                         class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+                         class="bg-indigo-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
                          style="width: 12%;">6/50
                     </div>
                 </div>
             </div>
-            <div id="time_div" class="flex items-center justify-center align-center">
-                <span id="time_remaining" class="m-1">3:12</span>
-                <img src="assets/img/clock.png" width="15px" alt="intro alif logo">
-            </div>
-            <div id="accuracy_div" class="flex items-center justify-center align-center">
-                <span id="quiz_accuracy" class="m-1">91%</span>
-                <img src="assets/img/target.png" width="20px" alt="intro alif logo">
+        </div>
+        <div class="mx-auto flex justify-center mt-6 mb-8">
+            <div id="time_div" class="w-36 h-36 flex items-center justify-center  align-center rounded-full  bg-gradient-to-r from-violet-300 to-violet-400 text-white-500 ">
+                <!--            <img src="assets/img/clock.png" width="40px" alt="intro alif logo">-->
+                <span id="time_remaining" class="m-1 text-5xl text-purple-800 font-serif">3:12</span>
             </div>
         </div>
-        <div id="quiz_main" class="h-[35vh] overflow-y-scroll">
+        <div id="quiz_main" class="h-[20vh] overflow-y-scroll">
             <h1 id="quiz_prompt"
-                class="quiz_items mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900">Identify the
+                class="quiz_items mb-4 text-2xl font-extrabold leading-none tracking-tight text-indigo-500">Identify the
                 corresponding Arabic word for the following</h1>
-            <h2><small id="quiz_item_label"
-                       class="quiz_items ml-2 text-2xl font-semibold text-gray-500 dark:text-blue-600">forgetting</small>
-            </h2>
+            <div class="w-40 mx-auto p-3 bg-gray-100 drop-shadow-md rounded-lg">
+                <h2>
+                    <small id="quiz_item_label"
+                           class="quiz_items ml-2 text-purple-800 font-bold ">forgetting</small>
+                </h2>
+            </div>
+
             <div id="quiz_extra" class="quiz_items"></div>
             <div id="quiz_image" class="quiz_items"></div>
             <div id="quiz_audio" class="quiz_items"></div>
@@ -46,18 +49,18 @@
             </div>
             <div id="quiz_answer_feedback" class="quiz_items"></div>
         </div>
-        <div id="quiz_solution" class="h-[40vh] overflow-y-scroll">
+        <div id="quiz_solution" class="h-[32vh] overflow-y-scroll">
             <div id="quiz_mcq_options" class="quiz_input quiz_options quiz_items" style="">
-                <button class="bg-blue-500 hover:bg-blue-700 text-xl text-white font-bold py-1 px-4 w-2/3 m-2 rounded-lg"
+                <button class="bg-gray-100 hover:bg-blue-200 active:bg-blue-100 text-xl text-indigo font-bold py-1 px-4 w-64 m-2 rounded-lg border-b-4 border-blue-500"
                         data-value="فِضَّة" data-id="fiDDah">فِضَّة
                 </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-xl text-white font-bold py-1 px-4 w-2/3 m-2 rounded-lg"
+                <button class="bg-gray-100 hover:bg-blue-200 active:bg-blue-100 text-xl text-indigo font-bold py-1 px-4 w-64 m-2 rounded-lg border-b-4 border-blue-500"
                         data-value="نِسْيَان" data-id="nisyaan">نِسْيَان
                 </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-xl text-white font-bold py-1 px-4 w-2/3 m-2 rounded-lg"
+                <button class="bg-gray-100 hover:bg-blue-200 active:bg-blue-100 text-xl text-indigo font-bold py-1 px-4 w-64 m-2 rounded-lg border-b-4 border-blue-500"
                         data-value="مَرْحَباً" data-id="mar7aban">مَرْحَباً
                 </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-xl text-white font-bold py-1 px-4 w-2/3 m-2 rounded-lg"
+                <button class="bg-gray-100 hover:bg-blue-200 active:bg-blue-100 text-xl text-indigo font-bold py-1 px-4 w-64 m-2 rounded-lg border-b-4 border-blue-500"
                         data-value="سَيِّئ" data-id="sayyi2">سَيِّئ
                 </button>
             </div>
@@ -89,10 +92,14 @@
         </div>
     </div>
 
-    <div id="bottom_menu" class="grid grid-cols-3 gap-4 h-[10vh]">
+    <div id="bottom_menu" class="grid grid-cols-4 gap-4 m-1 mt-2 h-[9vh] bg-white rounded-lg w-full  border-b-4 border-indigo-100">
+        <div id="accuracy_div" class="flex items-center justify-center align-center">
+            <img src="assets/img/target.png" width="20px" alt="intro alif logo">
+            <span id="quiz_accuracy" class="m-1">91%</span>
+        </div>
         <div id="coins_div" class="flex items-center justify-center align-center">
-            <span id="quiz_coin_count">173</span>
             <img id="coin_img" class="rounded-full w-4 h-4 m-1" src="assets/img/coin.png" alt="coin">
+            <span id="quiz_coin_count">173</span>
         </div>
         <div id="mood_div" class="flex items-center justify-center align-center">Mood</div>
         <div id="hints_div" class="flex items-center justify-center align-center">Hints</div>
